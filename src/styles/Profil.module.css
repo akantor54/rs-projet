@@ -1,0 +1,63 @@
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: 80%;
+  background: #777;
+}
+
+.headerProfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img {
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.ajout {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 15px 15px;
+}
+
+.separator {
+  width: 100%;
+}
+
+.menu {
+  width: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.lien {
+  cursor: pointer;
+  color: white;
+}
+
+.lien:hover {
+  font-weight: bold;
+}
+
+.ami {
+  background: #2600ff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.ami:hover {
+  background: #1e00c9;
+}
