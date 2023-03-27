@@ -5,7 +5,7 @@ import styles from "../styles/components/PostForm.module.css";
 
 const PostForm = ({ update }: any) => {
   const [content, setContent] = useState("");
-  const { data: session } = useSession();
+  const { data: session }: any = useSession();
 
   const envoi = useCallback(async () => {
     try {

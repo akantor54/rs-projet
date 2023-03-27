@@ -51,7 +51,7 @@ export default function Home() {
           <div className={styles.listPost}>
             {!posts && <h1>Loading...</h1>}
             {posts &&
-              posts.map((item) => (
+              posts.map((item): any => (
                 <PostCard
                   update={() => setUpdate((i) => (i ? false : true))}
                   key={item?.id}

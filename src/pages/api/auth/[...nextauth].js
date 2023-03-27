@@ -47,9 +47,13 @@ export default NextAuth({
       },
     }),
   ],
+  session: {
+    strategy: "jwt",
+  },
   callbacks: {
     async session({ session, token, user }) {
       session.user.id = token.sub;
+
       return session;
     },
   },
@@ -58,9 +62,6 @@ export default NextAuth({
   },
   debug: process.env.NODE_ENV === "development",
   adapter: PrismaAdapter(prismadb),
-  session: {
-    strategy: "jwt",
-  },
   jwt: {
     secret: process.env.SECRET,
   },

@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "../styles/components/Header.module.css";
 
 const Header = () => {
-  const { data: session } = useSession();
+  const { data: session }: any = useSession();
   return (
     <header className={styles.header}>
       <h2>JSP QUOI METTRE</h2>

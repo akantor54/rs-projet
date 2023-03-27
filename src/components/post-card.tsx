@@ -8,7 +8,7 @@ import Input from "./Input";
 
 const PostCard = ({ posts, update }: any) => {
   const { authorName, content, date, like, id } = posts;
-  const { data: session } = useSession();
+  const { data: session }: any = useSession();
   const [modifie, setModifie] = useState(false);
   const [postContent, setPostContent] = useState(content);
 

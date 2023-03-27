@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 import styles from "../../styles/components/Info.module.css";
 
 const Info = () => {
-  const { data: session } = useSession();
-  const [user, setUser] = useState();
-  const [stats, setStats] = useState();
+  const { data: session }: any = useSession();
+  const [user, setUser]: any = useState();
+  const [stats, setStats]: any = useState();
 
   useEffect(() => {
-    axios.get(`/api/profile/${session?.user.id}`).then((res) => {
+    axios.get(`/api/profile/${session?.user?.id}`).then((res) => {
       setUser(res.data.user);
       setStats(res.data.stat);
     });
@@ -33,7 +33,7 @@ const Info = () => {
         <p>nombre de post : {stats?.postNb}</p>
         <p>nombre de post liker : {stats?.postLike}</p>
         <p>nombre de like reçu : {stats?.likeRecu}</p>
-        <p>nombre d'amis : 2</p>
+        <p>nombre d&rsquo;amis : 2</p>
       </div>
     </div>
   );
