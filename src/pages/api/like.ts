@@ -19,18 +19,18 @@ export default async function handler(
     }
 
     const post = await prismadb.post.findUnique({ where: { id: id } });
-    const like = await prismadb.stat.findUnique({
+    const like: any = await prismadb.stat.findUnique({
       where: { authorId: authorId },
     });
 
     if (post?.like.includes(user.id)) {
       const newPostLike = post.like.filter((u) => u !== user?.id);
-      const posts = await prismadb.post.update({
+      const posts: any = await prismadb.post.update({
         where: { id: id },
         data: { like: newPostLike },
       });
 
-      const nbLike: Number = like?.postLike - 1;
+      const nbLike = like?.postLike - 1;
 
       const stat = await prismadb.stat.update({
         where: { authorId: authorId },
@@ -52,7 +52,7 @@ export default async function handler(
       data: { like: likes },
     });
 
-    const nbLike: Number = like?.postLike + 1;
+    const nbLike: Number | any = like?.postLike + 1;
 
     console.log(like);
 

@@ -32,7 +32,7 @@ const Profil = () => {
   const { id } = route.query;
   const [pages, setPages] = useState("post");
   const [posts, setPosts] = useState([]);
-  const { data: session } = useSession();
+  const { data: session }: any = useSession();
 
   useEffect(() => {
     axios.get("/api/posts").then((res) => setPosts(res.data.posts));
@@ -82,7 +82,9 @@ const Profil = () => {
           <div className={styles.container}>
             {pages === "post" &&
               posts &&
-              posts.map((item) => <PostCard key={item?.id} posts={item} />)}
+              posts.map((item: any) => (
+                <PostCard key={item?.id} posts={item} />
+              ))}
 
             {pages === "info" && <Info />}
           </div>

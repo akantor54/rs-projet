@@ -1,3 +1,4 @@
+import SessionType from "@/types/SessionType";
 import axios from "axios";
 import dayjs from "dayjs";
 import { useSession } from "next-auth/react";
@@ -5,7 +6,7 @@ import { useEffect, useState } from "react";
 import styles from "../../styles/components/Info.module.css";
 
 const Info = () => {
-  const { data: session }: any = useSession();
+  const { data: session }: SessionType | any = useSession();
   const [user, setUser]: any = useState();
   const [stats, setStats]: any = useState();
 
