@@ -24,7 +24,7 @@ model User{
 
 model Post{
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  authorId String @db.ObjectId @unique
+  authorId String @db.ObjectId 
   authorName String
   content String
   date DateTime @default(now())
