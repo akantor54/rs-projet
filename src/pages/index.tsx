@@ -8,6 +8,7 @@ import PostForm from "@/components/postForm";
 import PostCard from "@/components/post-card";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import PostType from "@/types/PostType";
 
 export const getServerSideProps = async (context: NextPageContext) => {
   const userIsAuthenticated = await getSession(context); // TODO: check if user is authenticated
@@ -51,10 +52,10 @@ export default function Home() {
           <div className={styles.listPost}>
             {!posts && <h1>Loading...</h1>}
             {posts &&
-              posts.map((item): any => (
+              posts.map((item: PostType) => (
                 <PostCard
                   update={() => setUpdate((i) => (i ? false : true))}
-                  key={item?.id}
+                  key={item.id}
                   posts={item}
                 />
               ))}
